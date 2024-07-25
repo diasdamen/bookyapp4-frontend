@@ -3,7 +3,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: '127.0.0.1',
+        hostname: 'bookyapp3-backend.onrender.com',
       },
     ],
   },
