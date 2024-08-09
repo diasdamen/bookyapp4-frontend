@@ -34,7 +34,20 @@ const RoomDetails = async ({params} : {params: any}) => {
   const isUserAuthenticated = await isAuthenticated();
   const userData = await getUser();
 
-  const imgURL = `https://bookyapp3-backend.onrender.com${room.data.attributes.image.data.attributes.url}`;
+  if (!room?.data?.attributes) {
+    return (
+      <section className="min-h-[80vh]">
+        <div className="container mx-auto py-8">
+          <div className="text-center">
+            <h1 className="h1">Room not found</h1>
+            <p>The room you are looking for does not exist.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  const imgURL = `https://bookyapp3-backend.onrender.com${room.data.attributes.image.data?.attributes?.url || ''}`;
   
   return (
     <section className="min-h-[80vh]">
@@ -44,8 +57,16 @@ const RoomDetails = async ({params} : {params: any}) => {
           <div className="flex-1">
             {/* image */}
             <div className="relative h-[360px] lg:h-[420px] mb-8">
-              <Image src={imgURL} fill className="object-cover" alt="" />
+
+              {room.data.attributes.image.data ? (
+                <Image src={imgURL} fill className="object-cover" alt={room.data.attributes.title} />
+              ) : (
+                <div className="h-full w-full bg-gray-200 flex items-center justify-center">
+                  <span>No Image Available</span>
+                </div>
+              )} 
             </div>
+
             <div className="flex flex-1 flex-col mb-8">
               {/* title & price */}
               <div className="flex justify-between items-center mb-4">
