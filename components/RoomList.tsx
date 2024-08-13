@@ -20,7 +20,7 @@ const RoomList = ({ rooms } : { rooms: any }) => {
   }, [roomType]);
 
   return (
-    <section className='py-16 min-h-[90vh]'>
+    <section id='rooms' className='py-16 min-h-[90vh]'>
       {/* image & title */}
       <div className='flex flex-col items-center'>
         {/* image */}

@@ -10,20 +10,20 @@ const links = [
     path: '/',
   },
   {
-    name: 'Restaurant',
-    path: '/',
+    name: 'About',
+    path: '#about',
   },
   {
-    name: 'Pool',
-    path: '/',
+    name: 'Rooms',
+    path: '#rooms',
   },
   {
-    name: 'Best deals',
-    path: '/',
+    name: 'Reviews',
+    path: '#reviews',
   },
   {
-    name: 'Contact',
-    path: '/',
+    name: 'Contacts',
+    path: '#contacts',
   },
 ];
 

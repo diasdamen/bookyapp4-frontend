@@ -32,7 +32,7 @@ const Header = async () => {
           <div className="flex items-center gap-5 justify-center xl:w-max">
             {/* logo */}
             <Link href="/">
-              <Image src="/assets/logo.svg" width={160} height={160} alt="" />
+              <Image src="/assets/royal-logo.svg" width={200} height={200} alt="" />
             </Link>
             {/* separator */}
             <div className="w-[1px] h-[40px] bg-gray-300"></div>
